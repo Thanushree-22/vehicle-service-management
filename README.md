@@ -249,6 +249,5 @@ Current test coverage includes:
 ---
 
 # Author
-
-Devitha Nuthanapati
+Thanushree PS
 
