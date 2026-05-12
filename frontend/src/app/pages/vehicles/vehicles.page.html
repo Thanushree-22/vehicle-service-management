@@ -1,0 +1,116 @@
+<app-header
+  title="Vehicles"
+  [showBackButton]="true">
+</app-header>
+
+<ion-content>
+
+  <div class="vehicles-container">
+
+    <div class="top-bar">
+
+      <ion-button
+        (click)="addVehicle()">
+
+        <ion-icon
+          name="add-outline"
+          slot="start">
+        </ion-icon>
+
+        Add
+
+      </ion-button>
+
+    </div>
+
+
+    <app-loading-spinner
+      *ngIf="isLoading">
+    </app-loading-spinner>
+
+
+    <div *ngIf="!isLoading">
+
+      <ion-card
+        *ngFor="let vehicle of vehicles"
+        class="vehicle-card">
+
+        <ion-card-content>
+
+          <div class="vehicle-header">
+
+            <div>
+              <ion-icon name="car-sport-outline"
+              class="vehicle-main-icon">
+              </ion-icon>
+
+              <div class="vehicle-number">
+
+                {{ vehicle.vehicle_number }}
+
+              </div>
+
+              <div class="owner-name">
+
+                {{ vehicle.owner_name }}
+
+              </div>
+
+            </div>
+
+            <ion-button
+              fill="clear"
+              class="delete-btn"
+              (click)="deleteVehicle(vehicle.id!)">
+
+              <ion-icon
+                name="trash-outline">
+              </ion-icon>
+
+            </ion-button>
+
+          </div>
+
+
+          <div class="vehicle-details">
+
+            <div class="vehicle-info">
+
+              <div class="brand-model">
+
+                {{ vehicle.brand }}
+                {{ vehicle.model }}
+
+              </div>
+
+              <div class="year-chip">
+
+                Year: {{ vehicle.year }}
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </ion-card-content>
+
+      </ion-card>
+
+
+      <div
+        class="empty-wrapper"
+        *ngIf="vehicles.length === 0">
+
+        <app-empty-state
+          title="No Vehicles"
+          subtitle="Add your first vehicle">
+        </app-empty-state>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</ion-content>

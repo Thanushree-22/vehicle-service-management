@@ -1,0 +1,34 @@
+// For information on how to create your own theme, please refer to:
+// https://ionicframework.com/docs/theming/
+:root {
+
+  --ion-color-primary: #2563eb;
+  --ion-color-primary-rgb: 37,99,235;
+
+  --app-background: #f8fafc;
+  --app-card: #ffffff;
+  --app-dark: #0f172a;
+  --app-text: #1e293b;
+
+  --app-success: #16a34a;
+  --app-danger: #dc2626;
+  --app-warning: #f59e0b;
+}
+
+body {
+
+  background: var(--app-background);
+
+  font-family: Inter, sans-serif;
+}
+
+.custom-card {
+
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  background: white;
+
+  padding: 20px;
+}

@@ -1,0 +1,41 @@
+.custom-header ion-toolbar {
+
+  --background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #7c3aed
+    );
+
+  --color: white;
+
+  padding:
+    8px 6px;
+
+  box-shadow:
+    0 4px 16px rgba(37,99,235,0.25);
+}
+
+
+ion-title {
+
+  font-size: 22px;
+
+  font-weight: 800;
+
+  text-align: center;
+
+  letter-spacing: 0.3px;
+}
+
+
+ion-button {
+
+  --color: white;
+}
+
+
+ion-icon {
+
+  font-size: 24px;
+}

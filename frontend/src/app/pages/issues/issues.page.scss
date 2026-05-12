@@ -1,0 +1,189 @@
+ion-content {
+
+  --background: #f4f7fb;
+}
+
+
+.issues-container {
+
+  padding: 20px;
+}
+
+
+.top-bar {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 24px;
+}
+
+
+.top-bar h1 {
+
+  font-size: 32px;
+
+  font-weight: 800;
+
+  color: #0f172a;
+}
+
+
+.issue-card {
+
+  margin-bottom: 20px;
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 10px 30px rgba(15,23,42,0.08);
+}
+.issue-card.card-PENDING {
+
+  border-top: 5px solid #f59e0b;
+}
+
+
+.issue-card.card-IN_PROGRESS {
+
+  border-top: 5px solid #2563eb;
+}
+
+
+.issue-card.card-COMPLETED {
+
+  border-top: 5px solid #16a34a;
+}
+
+
+ion-card-content {
+
+  padding: 22px;
+}
+
+
+.issue-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+
+.vehicle-number {
+
+  font-size: 24px;
+
+  font-weight: 800;
+
+  color: #0f172a;
+}
+
+
+.component-name {
+
+  color: #64748b;
+
+  margin-top: 6px;
+}
+
+
+.issue-description {
+
+  font-size: 16px;
+
+  color: #1e293b;
+
+  margin-bottom: 18px;
+
+  font-weight: 500;
+}
+
+
+.bottom-section {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+
+.service-chip {
+
+  background: #dbeafe;
+
+  color: #2563eb;
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  font-weight: 700;
+}
+
+
+.cost-chip {
+
+  background: #dcfce7;
+
+  color: #166534;
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  font-weight: 700;
+}
+
+
+.status-row {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+
+.status-chip {
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+
+.PENDING {
+
+  background: #fef3c7;
+
+  color: #d97706;
+}
+
+
+.IN_PROGRESS {
+
+  background: #dbeafe;
+
+  color: #2563eb;
+}
+
+
+.COMPLETED {
+
+  background: #dcfce7;
+
+  color: #16a34a;
+}

@@ -1,0 +1,95 @@
+ion-card {
+
+  margin: 0;
+
+  border-radius: 22px;
+
+  color: white;
+
+  box-shadow:
+    0 12px 24px rgba(0,0,0,0.12);
+}
+
+.card-content {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 10px;
+}
+
+h2 {
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+  margin: 0;
+}
+
+p {
+
+  margin-top: 10px;
+
+  opacity: 0.9;
+
+  font-size: 14px;
+}
+
+ion-icon {
+
+  font-size: 42px;
+}
+
+.gradient-blue {
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #1d4ed8
+    );
+}
+
+.gradient-green {
+
+  background:
+    linear-gradient(
+      135deg,
+      #16a34a,
+      #15803d
+    );
+}
+
+.gradient-orange {
+
+  background:
+    linear-gradient(
+      135deg,
+      #f59e0b,
+      #d97706
+    );
+}
+
+.gradient-red {
+
+  background:
+    linear-gradient(
+      135deg,
+      #dc2626,
+      #b91c1c
+    );
+}
+.stats-card {
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+.stats-card:hover {
+
+  transform: translateY(-4px);
+}

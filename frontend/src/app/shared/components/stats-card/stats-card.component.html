@@ -1,0 +1,27 @@
+<ion-card class="{{ colorClass }}">
+
+  <ion-card-content>
+
+    <div class="card-content" (click)="onCardClick()">
+
+      <div>
+
+        <h2>
+          {{ value }}
+        </h2>
+
+        <p>
+          {{ title }}
+        </p>
+
+      </div>
+
+      <ion-icon
+        [name]="icon">
+      </ion-icon>
+
+    </div>
+
+  </ion-card-content>
+
+</ion-card>

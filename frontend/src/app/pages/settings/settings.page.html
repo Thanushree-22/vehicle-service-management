@@ -1,0 +1,192 @@
+<app-header
+  title="Settings"
+  [showBackButton]="true">
+</app-header>
+
+<ion-content>
+
+  <div class="settings-container">
+
+    <div class="profile-card">
+
+      <div class="profile-avatar">
+
+        <ion-icon
+          name="person-outline">
+        </ion-icon>
+
+      </div>
+
+      <div class="profile-info">
+
+        <div class="profile-name">
+
+          Admin User
+
+        </div>
+
+        <div class="profile-role">
+
+          Vehicle Service Manager
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="section-title">
+
+      Preferences
+
+    </div>
+
+
+    <ion-card class="setting-card">
+
+      <ion-card-content>
+
+        <div class="setting-row">
+
+          <div>
+
+            <div class="setting-title">
+
+              Notifications
+
+            </div>
+
+            <div class="setting-subtitle">
+
+              Enable app alerts
+
+            </div>
+
+          </div>
+
+          <ion-toggle
+            [(ngModel)]="
+              notificationsEnabled
+            ">
+          </ion-toggle>
+
+        </div>
+
+      </ion-card-content>
+
+    </ion-card>
+
+
+    <ion-card class="setting-card">
+
+      <ion-card-content>
+
+        <div class="setting-row">
+
+          <div>
+
+            <div class="setting-title">
+
+              Dark Mode
+
+            </div>
+
+            <div class="setting-subtitle">
+
+              Toggle dark theme
+
+            </div>
+
+          </div>
+
+          <ion-toggle
+  [(ngModel)]="
+    darkMode
+  "
+  (ionChange)="
+    toggleDarkMode($event)
+  ">
+</ion-toggle>
+
+        </div>
+
+      </ion-card-content>
+
+    </ion-card>
+
+
+    <div class="section-title">
+
+      System
+
+    </div>
+
+
+    <ion-card class="setting-card">
+
+      <ion-card-content>
+
+        <div class="system-row">
+
+          <div>
+
+            Backend Status
+
+          </div>
+
+          <div class="status-online">
+
+            Online
+
+          </div>
+
+        </div>
+
+      </ion-card-content>
+
+    </ion-card>
+
+
+    <ion-card class="setting-card">
+
+      <ion-card-content>
+
+        <div class="system-row">
+
+          <div>
+
+            App Version
+
+          </div>
+
+          <div class="version-text">
+
+            v1.0.0
+
+          </div>
+
+        </div>
+
+      </ion-card-content>
+
+    </ion-card>
+
+
+    <ion-button
+      expand="block"
+      color="danger"
+      class="logout-btn">
+
+      <ion-icon
+        name="log-out-outline"
+        slot="start">
+      </ion-icon>
+
+      Logout
+
+    </ion-button>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,39 @@
+ion-menu {
+
+  --width: 260px;
+}
+
+ion-toolbar {
+
+  --background: #0f172a;
+
+  --color: white;
+}
+
+ion-content {
+
+  --background: #111827;
+}
+
+ion-item {
+
+  --background: transparent;
+
+  --color: #f1f5f9;
+
+  margin: 8px;
+
+  border-radius: 14px;
+
+  font-weight: 500;
+}
+
+ion-item:hover {
+
+  --background: rgba(255,255,255,0.08);
+}
+
+ion-icon {
+
+  color: #60a5fa;
+}

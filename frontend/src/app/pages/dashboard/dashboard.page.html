@@ -1,0 +1,104 @@
+<app-header
+  title="Dashboard"
+  [showSettings]="true">
+</app-header>
+
+<ion-content>
+
+  <div class="dashboard-container">
+
+    <h1>
+      Vehicle Service Dashboard
+    </h1>
+
+    <div class="stats-grid">
+
+      <app-stats-card
+        title="Total Revenue"
+        [value]="'₹ ' + totalRevenue"
+        icon="cash-outline"
+        colorClass="gradient-blue"
+        (cardClick)="goToRevenue()">
+      </app-stats-card>
+
+      <app-stats-card
+        title="Vehicles"
+        [value]="totalVehicles.toString()"
+        icon="car-outline"
+        colorClass="gradient-green"
+        (cardClick)="goToVehicles()">
+      </app-stats-card>
+
+      <app-stats-card
+        title="Pending Issues"
+        [value]="pendingIssues.toString()"
+        icon="warning-outline"
+        colorClass="gradient-orange"
+        (cardClick)="goToIssues()">
+      </app-stats-card>
+
+      <app-stats-card
+        title="Invoices"
+        [value]="totalInvoices.toString()"
+        icon="receipt-outline"
+        colorClass="gradient-red"
+        (cardClick)="goToInvoices()">
+      </app-stats-card>
+
+    </div>
+
+    <ion-card class="activity-card" >
+
+      <ion-card-header>
+
+        <ion-card-title>
+          Recent Activity
+        </ion-card-title>
+
+      </ion-card-header>
+
+      <ion-card-content>
+
+        <ion-list lines="none">
+
+         <ion-item
+  class="activity-item"
+  *ngFor="
+    let issue
+    of recentIssues
+  ">
+
+  <ion-label>
+
+    <div class="activity-title">
+
+  {{
+    issue.issue_description
+  }}
+
+</div>
+
+    <div class="activity-subtitle">
+
+  {{
+    issue.service_type
+  }}
+  •
+  {{
+    issue.status
+  }}
+
+</div>
+  </ion-label>
+
+</ion-item>
+
+        </ion-list>
+
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,146 @@
+<app-header
+  title="Invoices"
+  [showBackButton]="true">
+</app-header>
+
+<ion-content>
+
+  <div class="invoices-container">
+
+    <div class="top-bar">
+
+      <h1>
+        Invoices
+      </h1>
+
+      <ion-button
+        (click)="generateInvoice()">
+
+        <ion-icon
+          name="receipt-outline"
+          slot="start">
+        </ion-icon>
+
+        Generate
+
+      </ion-button>
+
+    </div>
+
+
+    <app-loading-spinner
+      *ngIf="isLoading">
+    </app-loading-spinner>
+
+
+    <ion-card
+      *ngFor="
+        let invoice
+        of invoices
+      "
+      class="invoice-card">
+
+      <ion-card-content>
+
+        <div class="invoice-header">
+
+          <div>
+
+            <div class="invoice-number">
+
+              Invoice
+              #{{ invoice.id }}
+
+            </div>
+
+            <div class="vehicle-number">
+
+              {{
+                getVehicleNumber(
+                  invoice.vehicle_id
+                )
+              }}
+
+            </div>
+
+          </div>
+
+          <div class="status-chip">
+
+            {{
+              invoice.payment_status
+            }}
+
+          </div>
+
+        </div>
+
+
+        <div class="amount-section">
+
+          <div class="amount-box">
+
+            <span>
+              Subtotal
+            </span>
+
+            ₹
+            {{ invoice.subtotal }}
+
+          </div>
+
+          <div class="amount-box">
+
+            <span>
+              Tax
+            </span>
+
+            ₹
+            {{ invoice.tax }}
+
+          </div>
+
+        </div>
+
+
+        <div class="total-section">
+
+          <div>
+            Total Amount
+          </div>
+
+          <div class="total-amount">
+
+            ₹
+            {{ invoice.total_amount }}
+
+          </div>
+
+        </div>
+
+
+        <div class="invoice-date">
+
+          {{
+            invoice.created_at
+            | date:'medium'
+          }}
+
+        </div>
+
+      </ion-card-content>
+
+    </ion-card>
+
+
+    <app-empty-state
+      *ngIf="
+        invoices.length === 0
+      "
+      title="No Invoices"
+      subtitle="Generate invoices from issues">
+    </app-empty-state>
+
+  </div>
+
+</ion-content>

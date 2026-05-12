@@ -1,0 +1,166 @@
+<app-header
+  title="Revenue"
+  [showBackButton]="true">
+</app-header>
+
+<ion-content>
+
+  <div class="revenue-container">
+
+
+    <app-loading-spinner
+      *ngIf="isLoading">
+    </app-loading-spinner>
+
+
+    <div *ngIf="!isLoading">
+
+      <div class="summary-card">
+
+
+        <div class="summary-top">
+
+          <ion-icon
+          name="cash-outline"
+          class="summary-icon">
+          </ion-icon>
+
+          <div class="summary-label">
+
+          Total Revenue
+
+          </div>
+
+        </div>
+
+        <div class="summary-value">
+
+          ₹ {{ totalRevenue || 0}}
+
+        </div>
+
+      </div>
+
+      <ion-card class="chart-card">
+
+  <ion-card-header>
+
+    <ion-card-title>
+
+      Monthly Revenue Trend
+
+    </ion-card-title>
+
+  </ion-card-header>
+
+  <ion-card-content>
+
+    <canvas
+      id="revenueChart">
+    </canvas>
+
+  </ion-card-content>
+
+</ion-card>
+
+
+      <h2 class="section-title">
+
+        Daily Revenue
+
+      </h2>
+
+      <ion-card
+        *ngFor="
+          let item
+          of dailyRevenue
+        "
+        class="revenue-card daily">
+
+        <ion-card-content>
+
+          <div>
+
+            {{ item.date }}
+
+          </div>
+
+          <div class="amount">
+
+            ₹ {{ item.revenue }}
+
+          </div>
+
+        </ion-card-content>
+
+      </ion-card>
+
+
+      <h2 class="section-title">
+
+        Monthly Revenue
+
+      </h2>
+
+      <ion-card
+        *ngFor="
+          let item
+          of monthlyRevenue
+        "
+        class="revenue-card monthly">
+
+        <ion-card-content>
+
+          <div>
+
+           {{ getMonthName(item.month) }}
+
+          </div>
+
+          <div class="amount">
+
+            ₹ {{ item.revenue }}
+
+          </div>
+
+        </ion-card-content>
+
+      </ion-card>
+
+
+      <h2 class="section-title">
+
+        Yearly Revenue
+
+      </h2>
+
+      <ion-card
+        *ngFor="
+          let item
+          of yearlyRevenue
+        "
+        class="revenue-card yearly">
+
+        <ion-card-content>
+
+          <div>
+
+            {{ item.year }}
+
+          </div>
+
+          <div class="amount">
+
+            ₹ {{ item.revenue }}
+
+          </div>
+
+        </ion-card-content>
+
+      </ion-card>
+
+    </div>
+
+  </div>
+
+</ion-content>

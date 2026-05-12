@@ -1,0 +1,176 @@
+<app-header
+  title="Issues"
+  [showBackButton]="true">
+</app-header>
+
+<ion-content>
+
+  <div class="issues-container">
+
+    <div class="top-bar">
+
+      <h1>
+        Issues
+      </h1>
+
+      <ion-button
+        (click)="addIssue()">
+
+        <ion-icon
+          name="add-outline"
+          slot="start">
+        </ion-icon>
+
+        Add
+
+      </ion-button>
+
+    </div>
+
+
+    <app-loading-spinner
+      *ngIf="isLoading">
+    </app-loading-spinner>
+
+
+    <ion-card
+      *ngFor="let issue of issues"
+      class="issue-card" [ngClass]="'card-' + issue.status">
+
+      <ion-card-content>
+
+        <div class="issue-header">
+
+          <div>
+
+            <div class="vehicle-number">
+
+              {{
+                getVehicleNumber(
+                  issue.vehicle_id
+                )
+              }}
+
+            </div>
+
+            <div class="component-name">
+
+              {{
+                getComponentName(
+                  issue.component_id
+                )
+              }}
+
+            </div>
+
+          </div>
+
+          <ion-button
+            fill="clear"
+            color="danger"
+            (click)="
+              deleteIssue(
+                issue.id!
+              )
+            ">
+
+            <ion-icon
+              name="trash-outline">
+            </ion-icon>
+
+          </ion-button>
+
+        </div>
+
+
+        <div class="issue-description">
+
+          {{
+            issue.issue_description
+          }}
+
+        </div>
+
+
+        <div class="bottom-section">
+
+          <div class="service-chip">
+
+            {{
+              issue.service_type
+            }}
+
+          </div>
+
+          <div class="cost-chip">
+
+            ₹
+            {{ issue.labor_cost }}
+
+          </div>
+
+        </div>
+
+
+        <div class="status-row">
+
+          <div
+            class="status-chip"
+            [ngClass]="
+              issue.status
+            ">
+
+            {{ issue.status }}
+
+          </div>
+
+          <ion-select
+            placeholder="Update"
+            (ionChange)="
+              updateStatus(
+                issue,
+                $event.detail.value
+              )
+            ">
+
+            <ion-select-option
+              value="PENDING">
+
+              Pending
+
+            </ion-select-option>
+
+            <ion-select-option
+              value="IN_PROGRESS">
+
+              In Progress
+
+            </ion-select-option>
+
+            <ion-select-option
+              value="COMPLETED">
+
+              Completed
+
+            </ion-select-option>
+
+          </ion-select>
+
+        </div>
+
+      </ion-card-content>
+
+    </ion-card>
+
+
+    <app-empty-state
+      *ngIf="
+        issues.length === 0
+      "
+      title="No Issues"
+      subtitle="Add service issues">
+    </app-empty-state>
+
+  </div>
+
+</ion-content>

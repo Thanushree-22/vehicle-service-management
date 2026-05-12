@@ -1,0 +1,150 @@
+<app-header
+  title="Vehicles"
+  [showBackButton]="true">
+</app-header>
+
+<ion-content>
+
+  <div class="components-container">
+
+    <div class="top-bar">
+
+      <ion-button
+        (click)="addComponent()">
+
+        <ion-icon
+          name="add-outline"
+          slot="start">
+        </ion-icon>
+
+        Add
+
+      </ion-button>
+
+    </div>
+
+
+    <app-loading-spinner
+      *ngIf="isLoading">
+    </app-loading-spinner>
+
+
+    <div *ngIf="!isLoading">
+
+      <ion-card
+        *ngFor="
+          let component
+          of components
+        "
+        class="component-card">
+
+        <ion-card-content>
+
+          <div class="component-header">
+
+            <div>
+               <ion-icon
+                name="construct-outline"
+                class="component-icon">
+               </ion-icon>
+
+              <div class="component-name">
+
+                {{ component.name }}
+
+              </div>
+
+              <div class="component-type">
+
+                {{ component.component_type }}
+
+              </div>
+
+            </div>
+
+            <ion-button
+              fill="clear"
+              color="danger"
+              (click)="
+                deleteComponent(
+                  component.id!
+                )
+              ">
+
+              <ion-icon
+                name="trash-outline">
+              </ion-icon>
+
+            </ion-button>
+
+          </div>
+
+
+          <div class="price-section">
+
+            <div class="price-box">
+
+              <span>
+                New
+              </span>
+
+              ₹ {{ component.new_price }}
+
+            </div>
+
+            <div class="price-box">
+
+              <span>
+                Repair
+              </span>
+
+              ₹ {{ component.repair_price || 0}}
+
+            </div>
+
+          </div>
+
+
+          <div class="bottom-row">
+
+            <div class="stock-chip">
+
+              Stock:
+              {{ component.stock_quantity }}
+
+            </div>
+
+           <div
+  class="repairable-chip"
+  [class.not-repairable]="
+    !component.is_repairable
+  ">
+
+  {{
+    component.is_repairable
+      ? 'Repairable'
+      : 'Not Repairable'
+  }}
+
+</div>
+
+          </div>
+
+        </ion-card-content>
+
+      </ion-card>
+
+
+      <app-empty-state
+        *ngIf="
+          components.length === 0
+        "
+        title="No Components"
+        subtitle="Add your first component">
+      </app-empty-state>
+
+    </div>
+
+  </div>
+
+</ion-content>
